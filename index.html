@@ -24,15 +24,16 @@
       <div class="py-6 text-center mx-6">
         <p>If you want to give people easy access to an AI-free Google search, send them to this page.</p>
       </div>
-      <form class="max-w-xl mx-auto" onsubmit="return false;">
+      <form class="max-w-xl mx-auto" action="https://www.google.com/search" method="get" onsubmit="searchFormHandler(event)">
+        <input type="hidden" name="udm" value="14">
         <div class="relative">
           <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
             <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
             </svg>
           </div>
-          <input type="search" id="default-search" class="block w-full p-4 ps-10 lg:text-lg text-gray-900 border border-gray-300 rounded-3xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Whatever you’re looking for" required onkeydown="handleKeyPress(event)" />
-          <button type="button" onclick="search()" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl lg:text-lg px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">AI-Free Search</button>
+          <input type="search" id="default-search" name="q" class="block w-full p-4 ps-10 lg:text-lg text-gray-900 border border-gray-300 rounded-3xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Whatever you’re looking for" required onkeydown="handleKeyPress(event)" />
+          <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl lg:text-lg px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">AI-Free Search</button>
         </div>
       </form>
       <div class="relative text-center py-6">
@@ -57,6 +58,13 @@
     function handleKeyPress(event) {
       if (event.keyCode === 13) { // Enter key code
         event.preventDefault(); // Prevent default form submission
+        search();
+      }
+    }
+
+    function searchFormHandler(event) {
+      if (!navigator.onLine) {
+        event.preventDefault();
         search();
       }
     }
