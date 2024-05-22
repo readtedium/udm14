@@ -4,52 +4,46 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 
 <head>
-     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests;">
-    <link
-      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/style.css" />
-	<link rel="home" href="/" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests;">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="home" href="/" />
   <title>&udm=14 | the enshittification Konami code</title>
   <meta name="description" content="A quick way to get an AI-free search without any extra work." />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
-
 </head>
+
 <body>
   <div class="flex h-screen">
-  <div class="search-box max-w-md lg:max-w-xl m-auto align-middle">
-    <h1><a href="#"><img src="https://images.tedium.co/uploads/udm14logo.svg" alt="&udm=14: the enshittification Konami code"></a></h1>
-    <div class="py-6 text-center mx-6">
-    <p>If you want to give people easy access to an AI-free Google search, send them to this page.</p>
-    </div>
-    <form class="max-w-xl mx-auto" onsubmit="return false;">   
+    <div class="search-box max-w-md lg:max-w-xl m-auto align-middle">
+      <h1><a href="#"><img src="https://images.tedium.co/uploads/udm14logo.svg" alt="&udm=14: the enshittification Konami code"></a></h1>
+      <div class="py-6 text-center mx-6">
+        <p>If you want to give people easy access to an AI-free Google search, send them to this page.</p>
+      </div>
+      <form class="max-w-xl mx-auto" onsubmit="return false;">
         <div class="relative">
-            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                </svg>
-                
-            </div>
-            <input type="search" id="default-search" class="block w-full p-4 ps-10 lg:text-lg text-gray-900 border border-gray-300 rounded-3xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Whatever you’re looking for" required />
-            <button type="button" onclick="search()" onkeydown="handleKeyPress(event)" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl lg:text-lg px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">AI-Free Search</button>
+          <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+          </div>
+          <input type="search" id="default-search" class="block w-full p-4 ps-10 lg:text-lg text-gray-900 border border-gray-300 rounded-3xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Whatever you’re looking for" required onkeydown="handleKeyPress(event)" />
+          <button type="button" onclick="search()" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl lg:text-lg px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">AI-Free Search</button>
         </div>
-    </form>
-    <div class="relative text-center py-6">
-<p><a href="https://tedium.co/2024/05/17/google-web-search-make-default/" class="font-medium text-yellow-600 dark:text-yellow-500 underline hover:no-underline">What is "&udm=14"?</a> • <a href="https://tenbluelinks.org" class="font-medium text-blue-600 dark:text-blue-500 underline hover:no-underline">TenBlueLinks</a> • <a href="http://frogfind.com" class="font-medium text-green-600 dark:text-green-500 underline hover:no-underline">FrogFind</a> • Built by <a href="https://tedium.co/" class="font-medium text-red-600 dark:text-red-500 underline hover:no-underline">Tedium</a>
-    </p>
-      
-  <br/>
-      <button
-  class="inline-flex items-center px-3 py-2 font-medium rounded-3xl px-4 py-2 leading-5 bg-gray-200 text-primary-100 text-black hover:text-gray-800 hover:bg-gray-300"
->
-      <img src="https://images.tedium.co/uploads/share-openly.svg"/>&nbsp;&nbsp;<a href="https://shareopenly.org/share/?url=https://udm14.com&text=utm14.com%3A%20An%20easy-to-use%20shortcut%20for%20an%20AI-free%20Google%20search.%20%28Try%20it%21%29">ShareOpenly</a>
-      </button>
-
+      </form>
+      <div class="relative text-center py-6">
+        <p><a href="https://tedium.co/2024/05/17/google-web-search-make-default/" class="font-medium text-yellow-600 dark:text-yellow-500 underline hover:no-underline">What is "&udm=14"?</a> • <a href="https://tenbluelinks.org" class="font-medium text-blue-600 dark:text-blue-500 underline hover:no-underline">TenBlueLinks</a> • <a href="http://frogfind.com" class="font-medium text-green-600 dark:text-green-500 underline hover:no-underline">FrogFind</a> • Built by <a href="https://tedium.co/" class="font-medium text-red-600 dark:text-red-500 underline hover:no-underline">Tedium</a>
+        </p>
+        <br/>
+        <button class="inline-flex items-center px-3 py-2 font-medium rounded-3xl px-4 py-2 leading-5 bg-gray-200 text-primary-100 text-black hover:text-gray-800 hover:bg-gray-300">
+          <img src="https://images.tedium.co/uploads/share-openly.svg"/>&nbsp;&nbsp;<a href="https://shareopenly.org/share/?url=https://udm14.com&text=utm14.com%3A%20An%20easy-to-use%20shortcut%20for%20an%20AI-free%20Google%20search.%20%28Try%20it%21%29">ShareOpenly</a>
+        </button>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -67,5 +61,5 @@
     }
   </script>
   <script defer data-domain="udm14.com" src="https://analytics.tedium.co/js/script.js"></script>
-
 </body>
+</html>
