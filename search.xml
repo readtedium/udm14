@@ -1,0 +1,10 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>&amp;udm=14</ShortName>
+  <Description>the enshittification Konami code</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Image width="512" height="512" type="image/png">https://udm14.com/favicon.png</Image>
+  <Url type="text/html" template="https://www.google.com/search?q={searchTerms}&amp;udm=14"/>
+  <Url type="application/x-suggestions+json" template="https://www.google.com/complete/search?client=firefox&amp;q={searchTerms}"/>
+  <moz:SearchForm>https://www.google.com/search</moz:SearchForm>
+</OpenSearchDescription>
