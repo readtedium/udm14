@@ -49,7 +49,8 @@
   <script>
     function search() {
       const searchTerm = document.getElementById("default-search").value;
-      const googleUrl = "https://www.google.com/search?q=" + searchTerm + "&udm=14";
+      const encodedSearchTerm = encodeURIComponent(searchTerm);
+      const googleUrl = "https://www.google.com/search?q=" + encodedSearchTerm + "&udm=14";
       window.location.href = googleUrl;
     }
 
