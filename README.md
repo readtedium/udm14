@@ -1,4 +1,4 @@
-# &udm=14 Website
+# &udm=14 Website (SFW version)
 
 Hey all, this is a basic website that allows for very easy searches of Google with the &udm=14 parameter already added. This parameter allows for searches that are AI-free and bereft of knowledge panels, but are buried in Google’s interface. I decided to offer a simple way to reach them.
 
