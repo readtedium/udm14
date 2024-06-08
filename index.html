@@ -96,6 +96,21 @@
     document.addEventListener("DOMContentLoaded", event => {
       document.getElementById("default-search").focus();
     });
+
+    // Function to extract query parameter from URL
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    // Function to fill search input if ?q= parameter is present in URL
+    window.onload = function() {
+        const searchInput = document.getElementById('default-search');
+        const searchTerm = getQueryParam('q');
+        if (searchTerm) {
+            searchInput.value = searchTerm;
+        }
+    };  
   </script>
   <script defer data-domain="udm14.com" src="https://analytics.tedium.co/js/script.js"></script>
 </body>
