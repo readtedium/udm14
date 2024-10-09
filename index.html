@@ -126,12 +126,12 @@
       document.getElementById("default-search").focus();
     });
 
-    if ("?r=" in window.location.search) {
+    if (window.location.search.includes("?r=")) {
       var redirectQUERY = window.location.search.replace("?r=", "");
       var redirectURL = "https://www.google.com/search?q=" + redirectQUERY + "&udm=14";
       window.location.href = redirectURL;
     }
-    else if ("?q=" in window.location.search) {
+    else if (window.location.search.includes("?q=")) {
       var query = window.location.search.replace("?q=", "");
       document.getElementById("default-search").value = query;
     }
