@@ -37,14 +37,18 @@
       </div>
       <form class="max-w-xl mx-auto" action="https://www.google.com/search" method="get" onsubmit="searchFormHandler(event)">
         <input type="hidden" name="udm" value="14">
-        <div class="relative">
-          <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-            <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-            </svg>
+        <div class="relative flex flex-col sm:flex-row items-center">
+          <div class="relative w-full">
+            <div class="sm:w-full">
+            <div class="top-5 md:top-inherit absolute inset-y-0 start-0 md-flex items-center ps-3 pointer-events-none">
+              <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+              </svg>
+            </div>
+            <input type="search" id="default-search" name="q" class="block w-full p-4 ps-10 pe-5 md:ps-10 md:pe-0 text-sm lg:text-lg  text-gray-900 dark:text-white dark:placeholder-gray-400 border border-gray-300 rounded-full dark:bg-zinc-700 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Whatever you’d like" required onkeydown="handleKeyPress(event)" />
+            </div>
+            <button type="submit" class="w-full min-h-[48px] md:min-h-fit sm:relative !mt-[10px] md:!w-auto md:mx-auto text-white md:!absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm lg:text-lg px-4 py-2 dark:bg-blue-700 dark:hover:bg-blue-700 dark:focus:ring-blue-800">AI-Free Search</button>
           </div>
-          <input type="search" id="default-search" name="q" class="block w-full p-4 ps-10 text-sm lg:text-lg  text-gray-900 dark:text-white dark:placeholder-gray-400 border border-gray-300 rounded-full dark:bg-zinc-700 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Whatever you’d like" required onkeydown="handleKeyPress(event)" />
-          <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm lg:text-lg px-4 py-2 dark:bg-zinc-800 dark:hover:bg-blue-700 dark:focus:ring-blue-800">AI-Free Search</button>
         </div>
       </form>
       <div class="relative text-sm lg:text-base text-center py-6">
