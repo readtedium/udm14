@@ -17,34 +17,40 @@
   <meta name="description" content="A quick way to get an AI-free search without any extra work." />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
-  <script src="http://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
   <script>
     tailwind.config = {
-        module.exports = {
-          darkMode: 'media',
-          // ...
+      theme: {
+        extend: {
+          fontSize: {
+            'xxs': '.65rem',
+          }
         }
-      }
+      },
+      darkMode: 'media',
+    }
   </script>
 </head>
 
 <body>
-  <div class="flex h-screen px-5 py-2 lg:p-0 dark:text-white dark:bg-zinc-800">
-    <div class="search-box max-w-md lg:max-w-xl m-auto align-middle">
-      <h1 class="dark:text-white"><a href="#"><img src="udm14logo.svg" alt="&udm=14: the disenshittification Konami code"></a></h1>
-      <div class="py-6 text-center mx-6 text-sm lg:text-base">
+  <div class="flex min-h-screen px-2 py-2 lg:p-0 dark:text-white dark:bg-zinc-800">
+    <div class="search-box w-full max-w-md lg:max-w-xl m-auto">
+      <h1 class="dark:text-white"><a href="#"><img src="udm14logo.svg" alt="&udm=14: the disenshittification Konami code" class="max-w-full h-auto"></a></h1>
+      <div class="py-3 lg:py-6 text-center mx-2 lg:mx-6 text-xxs sm:text-xs lg:text-sm">
         <p>If you want to give people easy access to an AI-free Google search, send them to this page.</p>
       </div>
       <form class="max-w-xl mx-auto" action="https://www.google.com/search" method="get" onsubmit="searchFormHandler(event)">
         <input type="hidden" name="udm" value="14">
-        <div class="relative">
-          <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-            <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-            </svg>
+        <div class="relative flex flex-col sm:flex-row items-center">
+          <div class="relative w-full">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+              <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+              </svg>
+            </div>
+            <input type="search" id="default-search" name="q" class="block w-full p-2 sm:p-4 ps-10 text-sm lg:text-base text-gray-900 dark:text-white dark:placeholder-gray-400 border border-gray-300 rounded-full dark:bg-zinc-700 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500 min-h-[44px]" placeholder="Whatever you'd like" required onkeydown="handleKeyPress(event)" />
           </div>
-          <input type="search" id="default-search" name="q" class="block w-full p-4 ps-10 text-sm lg:text-lg  text-gray-900 dark:text-white dark:placeholder-gray-400 border border-gray-300 rounded-full dark:bg-zinc-700 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Whatever you’d like" required onkeydown="handleKeyPress(event)" />
-          <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm lg:text-lg px-4 py-2 dark:bg-zinc-800 dark:hover:bg-blue-700 dark:focus:ring-blue-800">AI-Free Search</button>
+          <button type="submit" class="mt-2 sm:mt-0 sm:ml-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm lg:text-base px-4 py-2 dark:bg-zinc-800 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full sm:w-auto">AI-Free Search</button>
         </div>
       </form>
       <div class="relative text-sm lg:text-base text-center py-6">
