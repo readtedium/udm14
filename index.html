@@ -94,6 +94,15 @@
     }
 
     document.addEventListener("DOMContentLoaded", event => {
+      if ("?r=" in window.location.search) {
+        var redirectQUERY = window.location.search.replace("?r=", "");
+        var redirectURL = "https://www.google.com/search?q=" + redirectQUERY + "&udm=14";
+        window.location.href = redirectURL;
+      }
+      else if ("?q=" in window.location.search) {
+        var query = window.location.search.replace("?q=", "");
+        document.getElementById("default-search").value = query;
+      }
       document.getElementById("default-search").focus();
     });
   </script>
