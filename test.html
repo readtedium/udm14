@@ -140,25 +140,24 @@
         <div class="bar-box py-4 my-8 border-b">
         <div id="iconBarJs"></div>
         </div>
-        <!-- Add this near the top of your body tag, before the main content -->
         <div class="modal-container">
           <!-- Modal toggle button -->
           <label for="modal-toggle" class="cursor-pointer inline-flex items-center font-medium rounded-3xl px-4 py-2 leading-5 bg-gray-200 text-primary-100 text-black hover:text-gray-800 hover:bg-gray-300">
             More Information
           </label>
-
+        
           <!-- Hidden checkbox to control modal state -->
           <input type="checkbox" id="modal-toggle" class="hidden">
-
+        
           <!-- The entire modal structure controlled by the checkbox -->
           <div class="modal-overlay fixed inset-0 z-40 hidden">
             <!-- Backdrop that acts as a close button -->
             <label for="modal-toggle" class="absolute inset-0 bg-black bg-opacity-50 cursor-pointer"></label>
             
-            <!-- Modal content container -->
-            <div class="absolute inset-0 flex items-center justify-center p-4">
-              <!-- Content box that stops event propagation -->
-              <div class="relative bg-white dark:bg-zinc-800 rounded-lg shadow-xl max-w-md w-full mx-auto max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <!-- Modal content container - using pointer-events-none to prevent click interference -->
+            <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+              <!-- Content box with pointer-events-auto to allow interaction within box only -->
+              <div class="relative bg-white dark:bg-zinc-800 rounded-lg shadow-xl max-w-md w-full mx-auto max-h-[90vh] overflow-y-auto pointer-events-auto">
                 <div class="p-6">
                   <div class="flex justify-between items-start mb-4">
                     <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
