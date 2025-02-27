@@ -135,17 +135,16 @@
         </div>
         <!-- Add this near the top of your body tag, before the main content -->
         <div class="modal-container">
-
           <!-- Modal toggle button -->
           <label for="modal-toggle" class="cursor-pointer inline-flex items-center font-medium rounded-3xl px-4 py-2 leading-5 bg-gray-200 text-primary-100 text-black hover:text-gray-800 hover:bg-gray-300">
             More Information
           </label>
-          
+
           <!-- Hidden checkbox to control modal state -->
           <input type="checkbox" id="modal-toggle" class="hidden">
 
-          <!-- Modal backdrop -->
-          <div class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden modal-backdrop"></div>
+          <!-- Modal backdrop - acts as a giant close button -->
+          <label for="modal-toggle" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden modal-backdrop cursor-pointer"></label>
 
           <!-- Modal content -->
           <div class="fixed inset-0 flex items-center justify-center z-50 hidden modal-content">
@@ -173,14 +172,11 @@
                   <p class="text-xs lg:text-sm"><em><strong>Notes:</strong> If the search doesn't seem to work on your account, try switching accounts or using incognito mode. Also, udm14 does not track searches and uses self-hosted analytics from Plausible, a <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline" href="https://plausible.io/privacy-focused-web-analytics">privacy-minded</a> analytics tool.</em></p>
                 </div>
                 
-                <div class="mt-6 flex justify-end">
-                  <label for="modal-toggle" class="px-4 py-2 bg-blue-700 text-white rounded-full hover:bg-blue-800 cursor-pointer">Close</label>
-                </div>
+                <!-- Removed explicit close button, backdrop now acts as close button -->
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
