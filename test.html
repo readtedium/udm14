@@ -71,6 +71,13 @@
       text-align: right;
       text-decoration: none
     }
+
+    @media (prefers-color-scheme: dark) {
+        #iconBarJs .iconBarFlex {
+        --iconBarBackgroundColor: #000000;
+        --iconBarColor: #efefef
+      }
+    }
   </style>
   <script>
     tailwind.config = {
