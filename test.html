@@ -18,6 +18,60 @@
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+  <style>
+    #iconBarJs .iconBarFlex {
+      --iconBarBackgroundColor: #F9FAFB;
+      --iconBarColor: #111
+    }
+    #iconBarJs .iconBarFlex {
+      display: flex;
+      flex-direction: column;
+      max-inline-size: 100%;
+      gap: 1ex;
+      text-align: left;
+      font-size: 14px
+    }
+    #iconBarJs .iconBarLink {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      text-decoration: none;
+      border-radius: 6px;
+      background-color: var(--iconBarBackgroundColor);
+      border: solid 1px hsla(0, 0%, 0%, 0.1);
+      color: var(--iconBarColor)
+    }
+    #iconBarJs .iconBarLink:hover {
+      text-decoration: none
+    }
+    #iconBarJs .iconBarImage {
+      display: flex;
+      flex-shrink: 0;
+      align-self: stretch
+    }
+    #iconBarJs .iconBarImage img {
+      padding: 10px;
+      width: auto;
+      box-sizing: content-box;
+      height: 30px;
+      align-self: center
+    }
+    #iconBarJs .iconBarText {
+      padding: 8px 12px;
+      line-height: 1.35
+    }
+    #iconBarJs .iconBarTagline {
+      font-weight: 600
+    }
+    #iconBarJs .iconBarVia {
+      opacity: 0.75;
+      color: var(--iconBarColor);
+      font-size: 0.85em;
+      display: block;
+      text-align: right;
+      text-decoration: none
+    }
+  </style>
   <script>
     tailwind.config = {
       theme: {
