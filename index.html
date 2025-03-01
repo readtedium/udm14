@@ -18,6 +18,29 @@
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
   <script src="http://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+  <style>
+    @media (prefers-color-scheme: dark) {
+        #iconBarJs .iconBarFlex {
+        --iconBarBackgroundColor: rgb(24 24 27) !important;
+        --iconBarColor: #efefef !important; 
+      }
+    }
+
+    #modal-toggle:checked ~ .modal-overlay {
+      display: block;
+    }
+    
+    @media (prefers-reduced-motion: no-preference) {
+      .modal-overlay {
+        transition: opacity 0.2s ease;
+        opacity: 0;
+      }
+      
+      #modal-toggle:checked ~ .modal-overlay {
+        opacity: 1;
+      }
+    }
+  </style>
   <script>
     tailwind.config = {
       theme: {
@@ -36,7 +59,7 @@
     <div class="search-box max-w-md lg:max-w-xl m-auto align-middle">
       <h1 class="dark:text-white"><a href="#"><img src="udm14logosfw.svg" alt="&udm=14: the search engine Konami code"></a></h1>
       <div class="py-6 text-center mx-6 text-sm lg:text-base">
-        <p>If you want to give people easy access to an AI-free Google search (and you’d like to avoid swears), send them to this page.</p>
+        <p>If you want to give people easy access to an AI-overview-free Google search (and you’d like to avoid swears), send them to this page. Brought to you by <a href="https://tedium.co/" class="font-medium text-red-600 dark:text-red-500 underline hover:no-underline">Tedium</a>.</p>
       </div>
       <form class="max-w-xl mx-auto" action="https://www.google.com/search" method="get" onsubmit="searchFormHandler(event)">
         <input type="hidden" name="udm" value="14">
@@ -55,29 +78,53 @@
         </div>
       </form>
       <div class="relative text-sm lg:text-base text-center py-6">
-        <p><a href="https://tedium.co/2024/05/17/google-web-search-make-default/" class="font-medium text-yellow-600 dark:text-yellow-500 underline hover:no-underline">What is "&udm=14"?</a> • <a href="https://tenbluelinks.org" class="font-medium text-blue-600 dark:text-blue-500 underline hover:no-underline">TenBlueLinks</a> • <a href="http://frogfind.com" class="font-medium text-green-600 dark:text-green-500 underline hover:no-underline">FrogFind</a> • Built by <a href="https://tedium.co/" class="font-medium text-red-600 dark:text-red-500 underline hover:no-underline">Tedium</a>
-        </p>
-        <p>Proudly part of <a href="https://openwebengine.com" class="font-medium text-orange-600 dark:text-yellow-500 underline hover:no-underline">Open Web Engine</a>
+        <p><a href="https://tedium.co/2024/05/17/google-web-search-make-default/" class="font-medium text-yellow-600 dark:text-yellow-500 underline hover:no-underline">What is "&udm=14"?</a> • <a href="https://tenbluelinks.org" class="font-medium text-blue-600 dark:text-blue-500 underline hover:no-underline">TenBlueLinks</a> • <a href="http://frogfind.com" class="font-medium text-green-600 dark:text-green-500 underline hover:no-underline">FrogFind</a> • <a href="https://openwebengine.com" class="font-medium text-orange-600 dark:text-yellow-500 underline hover:no-underline">Open Web Engine</a>
         </p>
         <br/>
         <button class="inline-flex items-center font-medium rounded-3xl px-4 py-2 leading-5 bg-gray-200 text-primary-100 text-black hover:text-gray-800 hover:bg-gray-300">
-          <img src="share-openly.svg"/>&nbsp;&nbsp;<a href="https://shareopenly.org/share/?url=https://udm14.org&text=udm14.org%3A%20An%20easy-to-use%20%28and%20SFW%29%20shortcut%20for%20an%20AI-free%20Google%20search.%20%28Try%20it%21%29">ShareOpenly</a>
+          <img src="share-openly.svg"/>&nbsp;&nbsp;<a href="https://shareopenly.org/share/?url=https://udm14.org&text=udm14.org%3A%20An%20easy-to-use%20shortcut%20for%20an%20AI-free%20Google%20search.%20%28Try%20it%21%29">ShareOpenly</a>
         </button>
-        <br/>
-        <p class="pt-6 pb-1">
-          <strong>Grab the code:</strong> <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline" href="https://glitch.com/edit/#!/udm14">Glitch</a> | <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline" href="https://github.com/readtedium/udm14">Github</a>
-        </p>
-        <p class="pb-2">
-                    <strong>Versions</strong> <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline" href="https://udm14.com">Regular</a> | <a class="font-medium text-blue-600 dark:text-white no-underline hover:underline" href="https://udm14.org">SFW</a>
-        </p>
-        <p class="pb-2">
-                   Like this project?  <a class="font-medium text-red-600 dark:text-red-500 underline hover:no-underline" href="https://tedium.eo.page/udm14-signup" target="_blank">Subscribe to Tedium</a> and support our weird work
-        </p> 
-        <br/>
-        <p class="text-xs lg:text-sm"><em><strong>Note:</strong> The feature this relies on, while available to most people, may not be available on every account yet. If it doesn’t work, try switching accounts or using incognito mode. Finally, a safety note: udm14 does not track searches and uses self-hosted analytics from Plausible, a <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline" href="https://plausible.io/privacy-focused-web-analytics">privacy-minded</a> analytics tool.</em></p>
+        <div class="bar-box py-4 my-8 border-b">
+        <div id="iconBarJs"></div>
+        </div>
+        <div class="modal-container">
+          <p><strong>Versions:</strong> <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline" href="https://udm14.com">Regular</a> | <a class="font-medium text-blue-600 dark:text-white no-underline hover:underline" href="https://udm14.org">SFW</a> • <label class="font-medium font-bold text-blue-600 dark:text-white underline hover:no-underline inline" for="modal-toggle">FAQ</label></p>
+        
+          <input type="checkbox" id="modal-toggle" class="hidden">
+        
+          <div class="modal-overlay fixed inset-0 z-40 hidden">
+            <label for="modal-toggle" class="absolute inset-0 bg-black bg-opacity-50 cursor-pointer"></label>
+            
+            <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+              <div class="relative bg-white dark:bg-zinc-800 rounded-lg shadow-xl max-w-md w-full mx-auto max-h-[90vh] overflow-y-auto pointer-events-auto">
+                <div class="p-6">
+                  <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-semibold text-center flex-grow text-gray-900 dark:text-white">
+                      &udm14 FAQ
+                    </h3>
+                    <label for="modal-toggle" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                      </svg>
+                    </label>
+                  </div>
+                  
+                  <div class="space-y-4 text-left text-sm lg:text-base">
+                    <p><strong>Hmm, it’s not working.</strong> If the search doesn’t seem to work on your account, try switching accounts or using incognito mode. Google sometimes introduces random breaking changes.</p>
+                    <p><strong>Is this safe?</strong> Yes! We don’t track any web searches, and our analytics (by <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline" href="https://plausible.io/privacy-focused-web-analytics">Plausible</a>) are self-hosted. (And yes, we recently added a small ad to support server costs, but it’s intended to be minimalist and non-invasive.)</p>
+                    <p><strong>Can I run this myself?</strong> Yes! Pick up the code on <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline" href="https://github.com/readtedium/udm14">GitHub</a> or <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline" href="https://glitch.com/edit/#!/udm14">Glitch</a>. We offer it under a <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline"  href="https://creativecommons.org/public-domain/cc0/">CC0</a> license.</p>
+                    <p><strong>Like this project?</strong> Subscribe to <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline"  href="https://tedium.co/">Tedium</a> and support the weird work we do.</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+
 
   <script>
     function search() {
@@ -118,9 +165,38 @@
         if (searchTerm) {
             searchInput.value = searchTerm;
         }
-    };    
+    };  
   </script>
-  <!-- If you’re copying this elsewhere, be sure to remove this line or grab an analytics-free copy from https://github.com/readtedium/udm14/ -->
+  <!-- If you’re copying this elsewhere, be sure to remove everything below this line, or grab an analytics/ads-free copy from https://github.com/readtedium/udm14/ -->
   <script defer data-domain="udm14.org" src="https://analytics.tedium.co/js/script.outbound-links.js"></script>
+  <script src="//m.servedby-buysellads.com/monetization.js"></script>
+  <script>
+	(function () {
+		if (typeof _bsa !== 'undefined' && _bsa) {
+			_bsa.init(
+				'custom',
+				'CW7ICKQI',
+				'placement:tedium-icon-bar',
+				{
+					target: '#iconBarJs',
+					template: `
+<div class="iconBarFlex">
+	<a href="##statlink##" class="iconBarLink" rel="sponsored noopener" target="_blank" title="##company## — ##tagline##">
+		<div class="iconBarImage" style="background-color: ##backgroundColor##;">
+			<img height="30" width="30" src="##image##" alt="##company## logo">
+		</div>
+		<div class="iconBarText">
+			<div class="iconBarTagline">##companyTagline##</div>
+			<div class="iconBarDescription">##description##</div>
+		</div>
+	</a>
+	<a href="##ad_via_link##" class="iconBarVia" rel="sponsored noopener" target="_blank">ads via BuySellAds</a>
+</div>
+		`,
+				}
+			);
+		}
+	})();
+</script>
 </body>
 </html>
