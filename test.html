@@ -141,22 +141,14 @@
         <div id="iconBarJs"></div>
         </div>
         <div class="modal-container">
-          <!-- Modal toggle button -->
-          <label for="modal-toggle" class="cursor-pointer inline-flex items-center font-medium rounded-3xl px-4 py-2 leading-5 bg-gray-200 text-primary-100 text-black hover:text-gray-800 hover:bg-gray-300">
-            More Information
-          </label>
+          <p><strong>Versions</strong> <a class="font-medium text-blue-600 dark:text-white no-underline hover:underline" href="https://udm14.com">Regular</a> | <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline" href="https://udm14.org">SFW</a> | <label class="font-medium text-blue-600 dark:text-white underline hover:no-underline inline" for="modal-toggle">FAQ</label></p>
         
-          <!-- Hidden checkbox to control modal state -->
           <input type="checkbox" id="modal-toggle" class="hidden">
         
-          <!-- The entire modal structure controlled by the checkbox -->
           <div class="modal-overlay fixed inset-0 z-40 hidden">
-            <!-- Backdrop that acts as a close button -->
             <label for="modal-toggle" class="absolute inset-0 bg-black bg-opacity-50 cursor-pointer"></label>
             
-            <!-- Modal content container - using pointer-events-none to prevent click interference -->
             <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
-              <!-- Content box with pointer-events-auto to allow interaction within box only -->
               <div class="relative bg-white dark:bg-zinc-800 rounded-lg shadow-xl max-w-md w-full mx-auto max-h-[90vh] overflow-y-auto pointer-events-auto">
                 <div class="p-6">
                   <div class="flex justify-between items-start mb-4">
@@ -170,15 +162,12 @@
                     </label>
                   </div>
                   
-                  <!-- Modal content - you'll rewrite this -->
                   <div class="space-y-4 text-sm lg:text-base">
-                    <p><strong>Grab the code:</strong> <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline" href="https://glitch.com/edit/#!/udm14">Glitch</a> | <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline" href="https://github.com/readtedium/udm14">Github</a></p>
-                    
-                    <p><strong>Versions</strong> <a class="font-medium text-blue-600 dark:text-white no-underline hover:underline" href="https://udm14.com">Regular</a> | <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline" href="https://udm14.org">SFW</a></p>
-                    
-                    <p>Like this project? <a class="font-medium text-red-600 dark:text-red-500 underline hover:no-underline" href="https://tedium.eo.page/udm14-signup" target="_blank">Subscribe to Tedium</a> and support our weird work</p>
-                    
-                    <p class="text-xs lg:text-sm"><em><strong>Notes:</strong> If the search doesn't seem to work on your account, try switching accounts or using incognito mode. Also, udm14 does not track searches and uses self-hosted analytics from Plausible, a <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline" href="https://plausible.io/privacy-focused-web-analytics">privacy-minded</a> analytics tool.</em></p>
+
+                    <p><strong>Hmm, it’s not working.</strong> If the search doesn’t seem to work on your account, try switching accounts or using incognito mode. Google sometimes makes random breaking changes.</p>
+                    <p><strong>Is this safe?</strong> Yes! We don’t track any web searches, and our analytics (by <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline" href="https://plausible.io/privacy-focused-web-analytics">Plausible</a>) are self-hosted. (And yes, we recently added <a href="https://www.carbonads.net/">CarbonAds</a> to support server costs, but it’s intended to be minimalist and non-invasive.)</p>
+                    <p><strong>Can I run this myself?</strong> Yes! Pick up the code on <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline" href="https://github.com/readtedium/udm14">GitHub</a> or <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline" href="https://glitch.com/edit/#!/udm14">Glitch</a>. We offer it under a <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline"  href="https://creativecommons.org/public-domain/cc0/">CC0</a> license.</p>
+                    <p><strong>Like this project?</strong> Subscribe to <a class="font-medium text-blue-600 dark:text-white underline hover:no-underline"  href="https://tedium.co/">Tedium</a> and support the weird work we do.</p></div>
                   </div>
                 </div>
               </div>
