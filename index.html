@@ -20,11 +20,14 @@
   <script src="http://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
   <script>
     tailwind.config = {
-        module.exports = {
-          darkMode: 'media',
-          // ...
+      theme: {
+        extend: {
+          fontSize: {
+          }
         }
-      }
+      },
+      darkMode: 'media',
+    }
   </script>
 </head>
 
