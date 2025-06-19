@@ -3,8 +3,8 @@
 <ShortName>udm14</ShortName>
 <Description>the disenshittification Konami code</Description>
 <InputEncoding>UTF-8</InputEncoding>
-<Image width="512" height="512" type="image/png">https://udm14.com/favicon.png</Image>
+<Image width="512" height="512" type="image/png">https://udm56.com/favicon.png</Image>
 <Query role="example" searchTerms="tedium" />
-<Url type="text/html" template="https://www.google.com/search?q={searchTerms}&amp;udm=14"/>
+<Url type="text/html" template="https://www.google.com/search?q={searchTerms}&amp;udm=56"/>
 <Url type="application/x-suggestions+json" template="https://www.google.com/complete/search?client=firefox&amp;q={searchTerms}"/>
 </OpenSearchDescription>
