@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
-<ShortName>udm14</ShortName>
-<Description>the disenshittification Konami code</Description>
+<ShortName>udm56</ShortName>
+<Description>the ultra-minimalist search code</Description>
 <InputEncoding>UTF-8</InputEncoding>
 <Image width="512" height="512" type="image/png">https://udm56.com/favicon.png</Image>
 <Query role="example" searchTerms="tedium" />
