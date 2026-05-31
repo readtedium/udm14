@@ -154,6 +154,12 @@
       document.getElementById("default-search").focus();
     });
 
+	if (window.location.search.includes("?r=")) {
+      const redirectQUERY = window.location.search.replace("?r=", "");
+      const redirectURL = "https://www.google.com/search?q=" + redirectQUERY + "&udm=14";
+      window.location.href = redirectURL;
+    }
+
     // Function to extract query parameter from URL
     function getQueryParam(param) {
         const urlParams = new URLSearchParams(window.location.search);
